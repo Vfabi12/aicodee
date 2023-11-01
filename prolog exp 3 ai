@@ -57,4 +57,16 @@ divisible(X,Y1).
 isprime(X):-
 Y is 2, X > 1, \+divisible(X,Y).
 
+ONLINE
+
+item(price(apple, 1)).
+item(price(banana, 0.5)).
+item(price(chocolate, 2)).
+item(price(book, 10)).
+
+total_cost([], 0).
+total_cost([Item|Rest], Total) :-
+    item(price(Item, Price)),
+    total_cost(Rest, RestTotal),
+    Total is Price + RestTotal.
 

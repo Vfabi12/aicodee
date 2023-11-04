@@ -1,0 +1,32 @@
+7. Background color Change 5 sec Javascript
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Changer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background-color 1s ease;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        const colors = ['red','orange','yellow','green','turquoise','blue','violet','pink'];
+        let currentIndex = 0;
+        
+        function changeColor() {
+            document.body.style.backgroundColor = colors[currentIndex];
+            currentIndex = (currentIndex + 1) % colors.length;
+        }
+        
+        changeColor();
+        
+        setInterval(changeColor, 5000);
+    </script>
+</body>
+</html>

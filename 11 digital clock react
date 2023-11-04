@@ -1,0 +1,39 @@
+11. Digital Clock React
+
+Open vs terminal by clicking three dots beside ‘run’
+in vs terminal check for this:
+npm install -g create-react-app
+
+then type this command in the same terminal:
+npx create-react-app digiclock-app
+
+before pasting the code:
+cd digiclock-app
+
+then type/paste you code into the src/app.js folder of the react packages displayed in the left side of vs code
+paste in src/app.js:
+
+import React, { useState, useEffect } from 'react';
+import './App.css';
+function App() {
+  const [time, setTime] = useState(new Date());
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+  return (
+    <div className="App">
+      <h1 style={{ fontSize: '2em' }}>Digital Clock</h1>
+      <div className="clock" style={{ fontSize: '3em' }}>
+        {time.toLocaleTimeString()}
+      </div>
+      <p style={{ marginTop: '20px', fontSize: '1.5em' }}>Current Time</p>
+    </div>
+  );
+}
+export default App;
+
+to run the application in the terminal:
+npm start

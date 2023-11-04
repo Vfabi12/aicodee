@@ -1,0 +1,42 @@
+6. Email Address Validate Javascript 
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Email Validation</title>
+        <style>
+            .button {
+                padding: 5px;
+            }
+
+            .container {
+                text-align: center;
+                margin: 10%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <label for="email">Enter your email address:</label>
+            <input type="text" id="email" />
+            <div class="button">
+                <button onclick="validateEmail()">Submit</button>
+                <button onclick="resetEmail()">Reset</button>
+            </div>
+        </div>
+        <script>
+            function validateEmail() {
+                const emailInput = document.getElementById("email").value;
+                if (emailInput.includes("@") && emailInput.includes(".") && emailInput.indexOf("com")
+                    > 0) {
+                    alert("Email address is valid.");
+                } else {
+                    alert("Email address is invalid. Please enter a valid Email.");
+                }
+            }
+            function resetEmail() {
+                document.getElementById("email").value = "";
+            }
+        </script>
+    </body>
+</html>

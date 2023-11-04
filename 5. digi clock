@@ -1,0 +1,15 @@
+5. Digital Clock Javascript
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digital Clock</title>
+  <style>
+    body { display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+    #clock { font-size: 3em; }
+  </style>
+  <script> setInterval(()=>document.getElementById('clock').textContent=new Date().toLocaleTimeString(), 1000); </script>
+</head>
+<body>
+  <h1 id="clock"></h1>
+</body>
+</html>

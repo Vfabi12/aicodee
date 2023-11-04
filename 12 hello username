@@ -1,0 +1,52 @@
+12. Hello Username Node (SAMJHA HI NAHI)
+
+steps to run the last node code
+
+create a file naming greet-app
+in that file create 2 folders : index.html and server.js
+
+vs code mai folder open karo greet-app
+
+install packages (bash cmd link mai hai)
+
+run the server through : type in terminal:::: node server.js
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@ npm init -y
+@@@@@@@@@@@@@@@@@@@@@@@@@@ npm install express
+@@@@@@@@@@@@@@@@@@@@@@@@@@ npm install express
+@@@@@@@@@@@@@@@@@@@@@@@@@@ node server.js
+http://localhost:3000
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greet App</title>
+</head>
+<body>
+  <h1>Hello <span id="username"></span></h1>
+  <button onclick="getUserInput()">Greet App</button>
+
+  <script>
+    function getUserInput() {
+      const username = prompt("Enter your name:");
+      document.getElementById("username").textContent = username || "Guest";
+    }
+  </script>
+</body>
+</html>
+
+
+!!!!!!!!!!!!!!!!!!!!!server.js
+const express = require('express');
+const path = require('path');
+const app = express();
+const PORT = 3000;
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}/`);
+});

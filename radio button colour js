@@ -1,0 +1,31 @@
+8. 3 Radio Buttons Javascript
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Selector</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <input type="radio" name="color" id="red"> Red
+  <input type="radio" name="color" id="blue"> Blue
+  <input type="radio" name="color" id="green"> Green
+
+  <script>
+    const radios = document.querySelectorAll('input[type="radio"]');
+    radios.forEach(radio => {
+      radio.addEventListener('change', function() {
+        document.body.style.backgroundColor = this.id;
+      });
+    });
+  </script>
+</body>
+</html>
